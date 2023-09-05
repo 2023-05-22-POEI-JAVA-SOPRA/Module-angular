@@ -1,1 +1,35 @@
-<p>page-list-orders works!</p>
+
+<!-- string interpolation -->
+<h1>{{ title }}</h1>
+
+
+<!-- afficher un tableau-->
+<!-- <ul>
+  <li *ngFor='let item of tab'>
+    {{ item.client }}
+  </li>
+</ul> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor='let header of headers'>
+        {{ header }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor='let obj of tab'>
+      <th>Editer</th>
+      <td>{{ obj.typePresta}}</td>
+      <td>{{ obj.client}}</td>
+      <td> {{ obj.nbJours}}</td>
+      <td> {{ obj.tjmHt}}</td>
+      <td> Total HT</td>
+      <td> Total TTC</td>
+      <td> {{ obj.state}}</td>
+    </tr>
+
+  </tbody>
+</table>

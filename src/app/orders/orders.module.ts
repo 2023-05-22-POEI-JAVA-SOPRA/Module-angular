@@ -4,6 +4,7 @@ import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orde
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
 import { OrdersRoutingModule } from './orders-routing.module';
+import { DemoObservableComponent } from './pages/demo-observable/demo-observable.component';
 
 
 
@@ -11,7 +12,8 @@ import { OrdersRoutingModule } from './orders-routing.module';
   declarations: [
     PageListOrdersComponent,
     PageAddOrderComponent,
-    PageEditOrderComponent
+    PageEditOrderComponent,
+    DemoObservableComponent
   ],
   imports: [
     OrdersRoutingModule,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../service/orders.service';
 
 @Component({
@@ -8,7 +9,34 @@ import { OrdersService } from '../../service/orders.service';
 })
 export class PageListOrdersComponent {
   // notre objectif : déclencher sumUp et afficher le résultat dans la console.
+
+  public title = 'Liste des commandes';
+
+  // any type => permet de stocker tous types de variables dans tab
+
+  // tab est de type tableau d'Order et on n'initialise pas
+  // au démarrage de l'application
+  public tab!: Order[]; // false
+
+  public headers: string[] = [
+    'Action',
+    'Type',
+    'Client',
+    'Nb Jours',
+    'Tjm Ht',
+    'Total HT',
+    'Total TTC',
+    'Etat',
+  ];
+
   constructor(private ordersService: OrdersService) {
-    console.log(this.ordersService.sumUp(1, 2));
+    // console.log(this.ordersService.sumUp(1, 2));
+
+    // librairie RXJS
+    // observable/ observé
+    this.ordersService.getData().subscribe((data) => {
+      console.log(data);
+      this.tab = data; // true
+    });
   }
 }

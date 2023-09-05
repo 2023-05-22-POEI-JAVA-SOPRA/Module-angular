@@ -60,5 +60,47 @@
       "comment": null,
       "id": 12
     }
+  ],
+  "clients": [
+    {
+      "state": "INACTIVE",
+      "tva": 20,
+      "id": 1,
+      "name": "Capgemini",
+      "totalCaHt": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 2,
+      "name": "Modis",
+      "totalCaHt": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "tva": 20,
+      "state": "INACTIVE",
+      "name": "modis",
+      "totalCaHt": 0,
+      "comment": "rsger",
+      "id": 3
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 4,
+      "name": "Formation 8",
+      "totalCaHt": null,
+      "comment": null
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 5,
+      "name": null,
+      "totalCaHt": null,
+      "comment": null
+    }
   ]
 }
