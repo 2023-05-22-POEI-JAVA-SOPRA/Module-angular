@@ -18,6 +18,11 @@ const routes: Routes = [
       import('./orders/orders.module').then((m) => m.OrdersModule),
   },
   // ajouter le module en lazy loading
+  {
+    path: 'clients',
+    loadChildren: () =>
+      import('./clients/clients.module').then((m) => m.ClientsModule),
+  },
   // dans le module Errors, ajouter le fichier de routing
   // vérifier dans Network le chargement du module
   {
