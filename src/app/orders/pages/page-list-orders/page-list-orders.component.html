@@ -10,6 +10,7 @@
   </li>
 </ul> -->
 
+
 <table class="table">
   <thead>
     <tr>
@@ -22,12 +23,12 @@
 
     <tr *ngFor='let obj of tab'>
       <th>Editer</th>
-      <td>{{ obj.typePresta}}</td>
+      <td>{{ obj.typePresta | uppercase }}</td>
       <td>{{ obj.client}}</td>
       <td> {{ obj.nbJours}}</td>
       <td> {{ obj.tjmHt}}</td>
-      <td> Total HT</td>
-      <td> Total TTC</td>
+      <td> {{ obj.tjmHt | total :obj.nbJours | currency }}</td>
+      <td> {{ obj.tjmHt | total :obj.nbJours :obj.tva | currency }} </td>
       <td> {{ obj.state}}</td>
     </tr>
 
