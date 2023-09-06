@@ -14,7 +14,7 @@ export class StateDirective {
 
   // déclenché une seule fois
   ngOnInit() {
-    console.log(this.stateObj, 'depuis constructor');
+    // console.log(this.stateObj, 'depuis constructor');
     // CONFIRMED state-confirmed
     // this.tdClassName = 'state-' + this.stateObj.toLowerCase();
     this.tdClassName = `state-${this.stateObj.toLowerCase()}`;
