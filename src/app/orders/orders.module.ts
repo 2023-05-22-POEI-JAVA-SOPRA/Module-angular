@@ -7,6 +7,8 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { DemoObservableComponent } from './pages/demo-observable/demo-observable.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
+import { FormOrderComponent } from './components/form-order/form-order.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,8 +18,9 @@ import { CoreModule } from '../core/core.module';
     PageAddOrderComponent,
     PageEditOrderComponent,
     DemoObservableComponent,
+    FormOrderComponent,
   ],
-  imports: [OrdersRoutingModule, CommonModule, SharedModule],
+  imports: [OrdersRoutingModule, CommonModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }],
 })
 export class OrdersModule {}
