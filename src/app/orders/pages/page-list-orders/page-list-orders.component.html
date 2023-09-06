@@ -29,7 +29,12 @@
       <td> {{ obj.tjmHt}}</td>
       <td> {{ obj.tjmHt | total :obj.nbJours | currency }}</td>
       <td> {{ obj.tjmHt | total :obj.nbJours :obj.tva | currency }} </td>
-      <td> {{ obj.state}}</td>
+      <!-- <td [ngClass]="{
+        'state-cancelled': obj.state == 'CANCELLED',
+        'state-option': obj.state == 'OPTION',
+        'state-confirmed': obj.state == 'CONFIRMED'
+      }"> {{ obj.state}}</td> -->
+      <td appState [stateObj]='obj.state'>{{obj.state}}</td>
     </tr>
 
   </tbody>
