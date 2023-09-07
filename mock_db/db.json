@@ -89,16 +89,6 @@
       "client": null,
       "comment": null,
       "id": 15
-    },
-    {
-      "tjmHt": 1200,
-      "typePresta": null,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "OPTION",
-      "client": null,
-      "comment": null,
-      "id": 16
     }
   ],
   "clients": [

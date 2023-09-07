@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 
 @Component({
@@ -12,6 +13,9 @@ export class FormOrderComponent {
   @Input() objOrder!: Order;
   @Output() submitted = new EventEmitter();
 
+  // ici on stocke StateOrder pour itérer dans l'HTML
+  public states = Object.values(StateOrder);
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
@@ -20,11 +24,28 @@ export class FormOrderComponent {
     // associer un objet à chacun des inputs du form
     this.form = this.fb.group({
       tjmHt: [this.objOrder.tjmHt],
-      typePresta: [this.objOrder.typePresta],
-      nbJours: [this.objOrder.nbJours],
+      typePresta: [
+        this.objOrder.typePresta,
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(15),
+        ],
+      ],
+      nbJours: [
+        this.objOrder.nbJours,
+        [Validators.required, Validators.min(5), Validators.max(15)],
+      ],
       tva: [this.objOrder.tva],
       state: [this.objOrder.state],
-      client: [this.objOrder.client],
+      client: [
+        this.objOrder.client,
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(15),
+        ],
+      ],
       comment: [this.objOrder.comment],
       id: [this.objOrder.id],
     });

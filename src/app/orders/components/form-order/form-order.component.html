@@ -9,6 +9,10 @@
     <input type="text" class="form-control" id="typePresta" formControlName='typePresta'>
   </div>
 
+  <!-- Ici message d'erreur -->
+  <div *ngIf="form.controls['typePresta'].errors?.['minlength']">Ce champ doit contenir au minimum 5 caractères</div>
+  <div *ngIf="form.controls['typePresta'].errors?.['maxlength']">Ce champ doit contenir au maximum 15 caractères</div>
+
 
   <div class="form-group">
     <label for="client">client</label>
@@ -34,10 +38,7 @@
     <label for="state">state</label>
     <select class="form-control" id="state" formControlName='state'>
 
-      <option>Option1</option>
-      <option>Option2</option>
-      <option>Option3</option>
-
+      <option *ngFor='let state of states' [value]='state'> {{state}} </option>
 
     </select>
   </div>
@@ -47,10 +48,16 @@
     <textarea class="form-control" id="comment" formControlName='comment'></textarea>
   </div>
 
-  <button class='btn btn-primary' type='submit'>Valider</button>
+  <button
+  [disabled]='this.form.invalid'
+  class='btn btn-primary'
+  type='submit'>Valider</button>
 
 </form>
 </div>
+
+<!-- ici this.form.invalid renvoie true ou false -->
+invalid : {{ this.form.invalid}}
 
 
 <!-- ajouter et gérer le submit -->
