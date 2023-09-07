@@ -1,3 +1,11 @@
 
 <!-- créer un composant form-order, où ???? -->
-<app-form-order></app-form-order>
+
+
+
+<!-- générer un new order et le faire passer à app-form-order -->
+<!-- vérifier dans app-form-order si vous obtenez bien un objet dans ngOnInit -->
+<app-form-order
+[objOrder]='init'
+(submitted)='onAdd($event)'
+></app-form-order>

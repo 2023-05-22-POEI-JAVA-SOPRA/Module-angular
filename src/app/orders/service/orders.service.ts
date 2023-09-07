@@ -22,4 +22,10 @@ export class OrdersService {
   public getData(): Observable<Order[]> {
     return this.http.get<Order[]>(this.configUrl);
   }
+
+  // créer une méthode pour post .post('url', newObj);
+  // attention, tous les appels HTTP utilisent l'écriture observable/observer
+  public add(obj: Order): Observable<Order> {
+    return this.http.post<Order>(this.configUrl, obj);
+  }
 }

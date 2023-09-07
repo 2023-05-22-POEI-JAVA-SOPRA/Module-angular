@@ -18,4 +18,4 @@ export class Order implements OrderI {
   }
 }
 
-// new Order({ tjmHt: 1300 });
+// const obj = new Order();

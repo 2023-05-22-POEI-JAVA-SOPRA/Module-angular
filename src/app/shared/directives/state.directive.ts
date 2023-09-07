@@ -4,8 +4,11 @@ import { Directive, HostBinding, Input } from '@angular/core';
 @Directive({
   selector: '[appState]',
 })
+
 export class StateDirective {
+  // directive d'attribut
   @Input() stateObj!: string;
+  // cibler la classe de la balise <td>
   @HostBinding('class') tdClassName!: string;
 
   constructor() {
