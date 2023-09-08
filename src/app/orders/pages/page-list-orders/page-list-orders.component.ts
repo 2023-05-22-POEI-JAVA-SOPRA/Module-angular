@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../service/orders.service';
 
@@ -17,6 +18,9 @@ export class PageListOrdersComponent {
   // tab est de type tableau d'Order et on n'initialise pas
   // au démarrage de l'application
   public tab!: Order[]; // false
+
+  // ici on stocke StateOrder pour itérer dans l'HTML
+  public states = Object.values(StateOrder);
 
   public headers: string[] = [
     'Action',
@@ -50,4 +54,19 @@ export class PageListOrdersComponent {
   //   if (tva) return val * coef * (1 + tva / 100);
   //   return val * coef;
   // }
+
+  public changeState(obj: Order, event: Event) {
+    // console.log(obj);
+    // console.log(event);
+    const target = event.target as HTMLSelectElement;
+    // console.log(target);
+    const newState = target.value as StateOrder;
+    console.log(newState);
+
+    // Tout faire dans le service
+    // créer un nouvel objet de type Order et lui affecter le newState
+    // new Order(obj)
+    // dans le service, .put ('url/id', obj)
+
+  }
 }
