@@ -49,4 +49,8 @@ export class OrdersService {
 
   // getItemById()
   // http.get('url/id')
+  public getItemById(id: number): Observable<Order>{
+    return this.http.get<Order>(`${this.configUrl}/${id}`);
+  }
+
 }

@@ -1,4 +1,26 @@
 <!--  -->
 <h1>Editer une commande</h1>
 <!-- récupérer un order existant par l'url et le faire passer à app-form-order -->
-<!-- <app-form-order []=''></app-form-order> -->
+<div class="container" *ngIf='init'>
+  <app-form-order  [objOrder]='init' (submitted)='onEdit($event)'></app-form-order>
+</div>
+
+<!-- bloc pour message d'attente -->
+<div class="container" *ngIf='!init'>
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!--
+
+  dans app-form  > créer le bouton > (click)='onDelete()'
+  @Output()
+
+  dans page-edit-order
+  dans le service > méthode .delete(url/id)
+  redirection
+
+  ajuster affichage selon page-add ou page-edit
+
+ -->
