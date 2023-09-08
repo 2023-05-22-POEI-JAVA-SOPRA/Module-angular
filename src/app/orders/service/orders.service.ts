@@ -46,4 +46,7 @@ export class OrdersService {
     // vérifier dans Network ou vérifier dans db.json
     return this.http.put<Order>(`${this.configUrl}/${obj.id}`, obj);
   }
+
+  // getItemById()
+  // http.get('url/id')
 }

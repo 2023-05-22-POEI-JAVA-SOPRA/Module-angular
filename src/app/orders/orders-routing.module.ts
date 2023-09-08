@@ -9,7 +9,7 @@ const routes: Routes = [
   // orders/
   { path: '', component: PageListOrdersComponent },
   { path: 'add', component: PageAddOrderComponent },
-  { path: 'edit', component: PageEditOrderComponent },
+  { path: 'edit/:id', component: PageEditOrderComponent },
   { path: 'obs', component: DemoObservableComponent },
 ];
 

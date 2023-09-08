@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../service/orders.service';
@@ -33,13 +34,16 @@ export class PageListOrdersComponent {
     'Etat',
   ];
 
-  constructor(private ordersService: OrdersService) {
+  constructor(
+    private ordersService: OrdersService,
+    private router: Router
+    ) {
     // console.log(this.ordersService.sumUp(1, 2));
 
     // librairie RXJS = ce n'est pas ANGULAR
     // observable/ observé
     this.ordersService.getData().subscribe((data) => {
-      console.log(data);
+      //console.log(data);
       this.tab = data; // true
       // console.log(this.tab);
     });
@@ -70,7 +74,14 @@ export class PageListOrdersComponent {
     this.ordersService.changeState(obj, newState).subscribe((data) => {
       console.log(data, 'après modification');
       // obj = data;
-      Object.assign(obj, data); 
+      Object.assign(obj, data);
     });
+  }
+
+  public goToEdit(obj: Order) {
+    console.log(obj);
+    // redirection avec Router
+    // attention besoin de modifier la route
+    this.router.navigate(['orders', 'edit', obj.id ])
   }
 }
