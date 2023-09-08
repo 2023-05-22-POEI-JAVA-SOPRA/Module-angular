@@ -53,4 +53,9 @@ export class OrdersService {
     return this.http.get<Order>(`${this.configUrl}/${id}`);
   }
 
+  // methode pour supprimer un objet
+  public delete(id: number): Observable<Order>{
+    return this.http.delete<Order>(`${this.configUrl}/${id}`);
+  }
+
 }

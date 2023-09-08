@@ -32,16 +32,6 @@
     },
     {
       "tjmHt": 1200,
-      "typePresta": "coaching",
-      "nbJours": 8,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "client": "Modis",
-      "comment": "",
-      "id": 5
-    },
-    {
-      "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
       "state": "CANCELLED",
@@ -59,16 +49,6 @@
       "client": "Test",
       "comment": null,
       "id": 12
-    },
-    {
-      "tjmHt": 1200,
-      "typePresta": null,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "OPTION",
-      "client": "Client 12:17",
-      "comment": null,
-      "id": 13
     },
     {
       "tjmHt": 1200,

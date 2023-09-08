@@ -2,7 +2,11 @@
 <h1>Editer une commande</h1>
 <!-- récupérer un order existant par l'url et le faire passer à app-form-order -->
 <div class="container" *ngIf='init'>
-  <app-form-order  [objOrder]='init' (submitted)='onEdit($event)'></app-form-order>
+  <app-form-order
+  [objOrder]='init'
+  (submitted)='onEdit($event)'
+  (deleted)='onDelete($event)'>
+  </app-form-order>
 </div>
 
 <!-- bloc pour message d'attente -->

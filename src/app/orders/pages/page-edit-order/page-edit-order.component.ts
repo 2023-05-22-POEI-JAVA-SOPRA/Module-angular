@@ -44,4 +44,13 @@ export class PageEditOrderComponent {
       this.router.navigate(['']);
     });
   }
+
+  public onDelete(id: number) {
+    // appel au service
+    this.ordersService.delete(id).subscribe((data) => {
+      console.log(data);
+      // redirection
+      this.router.navigate(['']);
+    });
+  }
 }

@@ -12,6 +12,7 @@ export class FormOrderComponent {
   public form!: FormGroup;
   @Input() objOrder!: Order;
   @Output() submitted = new EventEmitter();
+  @Output() deleted = new EventEmitter();
 
   // ici on stocke StateOrder pour itérer dans l'HTML
   public states = Object.values(StateOrder);
@@ -57,6 +58,11 @@ export class FormOrderComponent {
     // vérifier le form
     console.log(this.form.value);
     this.submitted.emit(this.form.value);
+  }
+
+  public onDelete() {
+    // console.log(this.objOrder.id);//
+    this.deleted.emit(this.objOrder.id);
   }
 }
 

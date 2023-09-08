@@ -56,6 +56,12 @@
 </form>
 </div>
 
+
+<div class="d-grid gap-2 col-6 mx-auto" *ngIf='this.objOrder.id'>
+  <button class="btn btn-danger" (click)='onDelete()'>EFFACER</button>
+</div>
+
+
 <!-- ici this.form.invalid renvoie true ou false -->
 invalid : {{ this.form.invalid}}
 
