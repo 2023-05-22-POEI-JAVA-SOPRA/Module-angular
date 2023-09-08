@@ -2,10 +2,10 @@
   "orders": [
     {
       "tjmHt": 1200,
-      "typePresta": "Application2024",
       "nbJours": 5,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "OPTION",
+      "typePresta": "Application2024",
       "client": "Capgemini",
       "comment": "",
       "id": 1
@@ -14,7 +14,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CONFIRMED",
       "typePresta": "formation",
       "client": "Capgemini",
       "comment": null,
@@ -44,7 +44,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CANCELLED",
       "typePresta": "Formation",
       "client": "Client 11",
       "comment": null,

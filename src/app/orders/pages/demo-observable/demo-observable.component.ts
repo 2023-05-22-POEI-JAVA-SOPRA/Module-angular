@@ -1,3 +1,4 @@
+import { jsDocComment } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,7 +12,10 @@ export class DemoObservableComponent {
     obs.next(1);
     obs.next(2);
     obs.next(Math.random())
+
   });
+
+  // librairie rxjs
 
   constructor() {
     this.observable.subscribe((data) => {

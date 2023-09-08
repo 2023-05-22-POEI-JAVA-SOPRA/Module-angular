@@ -67,6 +67,10 @@ export class PageListOrdersComponent {
     // créer un nouvel objet de type Order et lui affecter le newState
     // new Order(obj)
     // dans le service, .put ('url/id', obj)
-
+    this.ordersService.changeState(obj, newState).subscribe((data) => {
+      console.log(data, 'après modification');
+      // obj = data;
+      Object.assign(obj, data); 
+    });
   }
 }

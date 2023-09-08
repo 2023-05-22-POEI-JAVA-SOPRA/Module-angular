@@ -4,7 +4,6 @@ import { Directive, HostBinding, Input } from '@angular/core';
 @Directive({
   selector: '[appState]',
 })
-
 export class StateDirective {
   // directive d'attribut
   @Input() stateObj!: string;
@@ -20,8 +19,12 @@ export class StateDirective {
     // console.log(this.stateObj, 'depuis constructor');
     // CONFIRMED state-confirmed
     // this.tdClassName = 'state-' + this.stateObj.toLowerCase();
-    this.tdClassName = `state-${this.stateObj.toLowerCase()}`;
+    // this.tdClassName = `state-${this.stateObj.toLowerCase()}`;
   }
 
+  // ici on utilise ngOnChanges car besoin de modifier les styles plusieurs fois
+  ngOnChanges() {
+    this.tdClassName = `state-${this.stateObj.toLowerCase()}`;
+  }
   // CYCLE DE VIE - LIFE CYCLE
 }
