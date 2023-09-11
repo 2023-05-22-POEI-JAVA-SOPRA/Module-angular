@@ -9,6 +9,7 @@ import { OrdersService } from '../../service/orders.service';
   styleUrls: ['./page-edit-order.component.scss'],
 })
 export class PageEditOrderComponent {
+  public titre = 'Editer une commande'
   /*
     extraire l'id de l'url
     appel au service

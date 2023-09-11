@@ -1,20 +1,32 @@
 <!--  -->
-<h1>Editer une commande</h1>
 <!-- récupérer un order existant par l'url et le faire passer à app-form-order -->
-<div class="container" *ngIf='init'>
-  <app-form-order
-  [objOrder]='init'
-  (submitted)='onEdit($event)'
-  (deleted)='onDelete($event)'>
-  </app-form-order>
-</div>
 
-<!-- bloc pour message d'attente -->
-<div class="container" *ngIf='!init'>
-  <div class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
+<!-- ajouter un composant qui va contenir ce composant -->
+<!-- <app-template-full-width></app-template-full-width>
+<app-template-container></app-template-container> -->
+
+<!-- faire passer une valeur de titre aux templates -->
+<app-template-container [title]='titre'>
+
+      <div class="container" *ngIf='init'>
+        <app-form-order
+        [objOrder]='init'
+        (submitted)='onEdit($event)'
+        (deleted)='onDelete($event)'
+        ></app-form-order>
+       </div>
+
+      <!-- bloc pour message d'attente -->
+      <div class="container" *ngIf='!init'>
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+
+</app-template-container>
+
+
 
 <!--
 
