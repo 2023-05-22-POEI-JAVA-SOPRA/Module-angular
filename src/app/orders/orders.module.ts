@@ -10,6 +10,8 @@ import { CoreModule } from '../core/core.module';
 import { FormOrderComponent } from './components/form-order/form-order.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TemplatesModule } from '../templates/templates.module';
+import { DemoObsSubjectComponent } from './pages/demo-obs-subject/demo-obs-subject.component';
+import { DemoObsBehaviorSubjComponent } from './pages/demo-obs-behavior-subj/demo-obs-behavior-subj.component';
 
 
 
@@ -20,6 +22,8 @@ import { TemplatesModule } from '../templates/templates.module';
     PageEditOrderComponent,
     DemoObservableComponent,
     FormOrderComponent,
+    DemoObsSubjectComponent,
+    DemoObsBehaviorSubjComponent,
   ],
   imports: [OrdersRoutingModule, CommonModule, SharedModule, ReactiveFormsModule, TemplatesModule],
   providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }],

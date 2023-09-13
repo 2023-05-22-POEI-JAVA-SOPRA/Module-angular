@@ -27,8 +27,8 @@
       <td>{{ obj.client}}</td>
       <td> {{ obj.nbJours}}</td>
       <td> {{ obj.tjmHt}}</td>
-      <td> {{ obj.tjmHt | total :obj.nbJours | currency }}</td>
-      <td> {{ obj.tjmHt | total :obj.nbJours :obj.tva | currency }} </td>
+      <td> {{ obj | total | currency }}</td>
+      <td> {{ obj| total : true | currency }} </td>
       <!-- <td [ngClass]="{
         'state-cancelled': obj.state == 'CANCELLED',
         'state-option': obj.state == 'OPTION',

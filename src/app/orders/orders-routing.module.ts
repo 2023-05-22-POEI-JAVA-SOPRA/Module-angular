@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DemoObsBehaviorSubjComponent } from './pages/demo-obs-behavior-subj/demo-obs-behavior-subj.component';
+import { DemoObsSubjectComponent } from './pages/demo-obs-subject/demo-obs-subject.component';
 import { DemoObservableComponent } from './pages/demo-observable/demo-observable.component';
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'add', component: PageAddOrderComponent },
   { path: 'edit/:id', component: PageEditOrderComponent },
   { path: 'obs', component: DemoObservableComponent },
+  { path: 'obs-subject', component: DemoObsSubjectComponent },
+  { path: 'obs-behavior-subject', component: DemoObsBehaviorSubjComponent},
 ];
 
 @NgModule({

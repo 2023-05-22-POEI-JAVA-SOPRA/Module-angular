@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Order } from 'src/app/core/models/order';
 
 // DECORATOR
 @Pipe({
@@ -6,12 +7,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class TotalPipe implements PipeTransform {
-
-  transform(val: number, coef: number, tva?: number): number {
+  transform(item: Order, tva?: boolean): number {
     //console.log('déclenché');
 
-    if (tva) return val * coef * (1 + tva / 100);
-    return val * coef;
+    if (tva) return item.totalTTC();
+    return item.totalHT();
   }
-
 }

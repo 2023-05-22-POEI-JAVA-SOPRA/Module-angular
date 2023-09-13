@@ -21,7 +21,9 @@ export class PageListOrdersComponent {
   public tab!: Order[]; // false
 
   // ici on stocke StateOrder pour itérer dans l'HTML
+
   public states = Object.values(StateOrder);
+
 
   public headers: string[] = [
     'Action',
@@ -38,6 +40,9 @@ export class PageListOrdersComponent {
     private ordersService: OrdersService,
     private router: Router
     ) {
+      const value1 = StateOrder.CANCELLED;
+      const index = this.states.indexOf(value1);
+      console.log(index)
     // console.log(this.ordersService.sumUp(1, 2));
 
     // librairie RXJS = ce n'est pas ANGULAR

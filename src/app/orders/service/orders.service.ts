@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 
@@ -21,7 +21,13 @@ export class OrdersService {
 
   // créer une méthode pour fetch('url');
   public getData(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.configUrl);
+    return this.http.get<Order[]>(this.configUrl).pipe(
+      map((tab) => {
+        return tab.map((obj) => {
+          return new Order(obj);
+        });
+      })
+    );
   }
 
   // créer une méthode pour post .post('url', newObj);
@@ -49,13 +55,12 @@ export class OrdersService {
 
   // getItemById()
   // http.get('url/id')
-  public getItemById(id: number): Observable<Order>{
+  public getItemById(id: number): Observable<Order> {
     return this.http.get<Order>(`${this.configUrl}/${id}`);
   }
 
   // methode pour supprimer un objet
-  public delete(id: number): Observable<Order>{
+  public delete(id: number): Observable<Order> {
     return this.http.delete<Order>(`${this.configUrl}/${id}`);
   }
-
 }
