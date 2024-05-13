@@ -9,7 +9,9 @@ import { OrdersService } from '../../service/orders.service';
   styleUrls: ['./page-edit-order.component.scss'],
 })
 export class PageEditOrderComponent {
-  public titre = 'Editer une commande'
+  public titre = 'Editer une commande';
+  public idToDelete!: number
+  public isModalOpen = false;
   /*
     extraire l'id de l'url
     appel au service
@@ -46,12 +48,28 @@ export class PageEditOrderComponent {
     });
   }
 
-  public onDelete(id: number) {
+  public onOpenModal(id: number) {
     // appel au service
-    this.ordersService.delete(id).subscribe((data) => {
+    // this.ordersService.delete(id).subscribe((data) => {
+    //   console.log(data);
+    //   // redirection
+    //   this.router.navigate(['']);
+    // });
+    // on stocke l'id à supprimer
+    this.idToDelete = id;
+    // au lieu de delete on ouvre une modal
+    this.isModalOpen = true;
+  }
+
+  public onDelete() {
+    this.ordersService.delete(this.idToDelete).subscribe((data) => {
       console.log(data);
       // redirection
       this.router.navigate(['']);
     });
+  }
+
+  public closeModal(){
+    this.isModalOpen = false
   }
 }

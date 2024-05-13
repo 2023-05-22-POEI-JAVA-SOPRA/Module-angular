@@ -24,7 +24,6 @@ export class PageListOrdersComponent {
 
   public states = Object.values(StateOrder);
 
-
   public headers: string[] = [
     'Action',
     'Type',
@@ -36,21 +35,23 @@ export class PageListOrdersComponent {
     'Etat',
   ];
 
-  constructor(
-    private ordersService: OrdersService,
-    private router: Router
-    ) {
-      const value1 = StateOrder.CANCELLED;
-      const index = this.states.indexOf(value1);
-      console.log(index)
+  constructor(private ordersService: OrdersService, private router: Router) {
+    const value1 = StateOrder.CANCELLED;
+    const index = this.states.indexOf(value1);
+    //console.log(index);
     // console.log(this.ordersService.sumUp(1, 2));
 
     // librairie RXJS = ce n'est pas ANGULAR
     // observable/ observé
-    this.ordersService.getData().subscribe((data) => {
-      //console.log(data);
-      this.tab = data; // true
-      // console.log(this.tab);
+    this.ordersService.getData().subscribe({
+      next: (data) => {
+        //console.log(data);
+        this.tab = data
+      },
+      error: (e) => {
+        //console.log(e);
+        // ici on peut afficher l'erreur dans la page
+      },
     });
   }
 
@@ -87,6 +88,6 @@ export class PageListOrdersComponent {
     console.log(obj);
     // redirection avec Router
     // attention besoin de modifier la route
-    this.router.navigate(['orders', 'edit', obj.id ])
+    this.router.navigate(['orders', 'edit', obj.id]);
   }
 }

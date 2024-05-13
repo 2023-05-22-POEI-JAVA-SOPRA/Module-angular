@@ -25,6 +25,7 @@ export class StateDirective {
   // ici on utilise ngOnChanges car besoin de modifier les styles plusieurs fois
   ngOnChanges() {
     this.tdClassName = `state-${this.stateObj.toLowerCase()}`;
+    console.log(this.tdClassName);
   }
   // CYCLE DE VIE - LIFE CYCLE
 }

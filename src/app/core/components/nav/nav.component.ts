@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+  public counter: number = 0
 
+  onAdd(){
+    this.counter ++
+  }
 }

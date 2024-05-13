@@ -1,0 +1,13 @@
+<div class="modal-background">
+  <div class="modal-content">
+    <!-- Contenu de la modal -->
+    <div>
+      <ng-content select=".modal-description"></ng-content> <!-- Emplacement pour le contenu dynamique -->
+    </div>
+
+    <!-- Boutons -->
+    <div class="modal-buttons">
+      <ng-content select=".modal-buttons"></ng-content> <!-- Emplacement pour les boutons dynamiques -->
+    </div>
+  </div>
+</div>

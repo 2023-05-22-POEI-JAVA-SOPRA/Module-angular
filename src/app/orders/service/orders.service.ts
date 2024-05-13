@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
+import { throwError } from 'rxjs';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 
@@ -14,6 +15,7 @@ export class OrdersService {
   // propriétés et des méthodes
 
   public configUrl = 'http://localhost:3007/orders';
+  private erreur = 'Erreur personnalisée'; // Ton message d'erreur
 
   public sumUp(a: number, b: number): number {
     return a + b;
@@ -26,6 +28,10 @@ export class OrdersService {
         return tab.map((obj) => {
           return new Order(obj);
         });
+      }),
+      catchError(() => {
+        console.error("Une erreur s'est produite : ", this.erreur);
+        return throwError(() => this.erreur); // Retourne l'erreur stockée dans 'erreur'
       })
     );
   }

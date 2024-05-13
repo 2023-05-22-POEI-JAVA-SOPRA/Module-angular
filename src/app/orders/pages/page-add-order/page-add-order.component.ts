@@ -14,7 +14,10 @@ export class PageAddOrderComponent {
 
   // ajouter le service pour accéder à la méthode add()
   // ici Router permet les redirections
-  constructor(private ordersService: OrdersService, private router: Router) {}
+  constructor(private ordersService: OrdersService, private router: Router) {
+    console.log('test');
+
+  }
 
   public onAdd(obj: Order) {
     // console.log(obj, 'depuis page add order');

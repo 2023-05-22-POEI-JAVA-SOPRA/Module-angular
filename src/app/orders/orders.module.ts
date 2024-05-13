@@ -13,8 +13,6 @@ import { TemplatesModule } from '../templates/templates.module';
 import { DemoObsSubjectComponent } from './pages/demo-obs-subject/demo-obs-subject.component';
 import { DemoObsBehaviorSubjComponent } from './pages/demo-obs-behavior-subj/demo-obs-behavior-subj.component';
 
-
-
 @NgModule({
   declarations: [
     PageListOrdersComponent,
@@ -25,7 +23,13 @@ import { DemoObsBehaviorSubjComponent } from './pages/demo-obs-behavior-subj/dem
     DemoObsSubjectComponent,
     DemoObsBehaviorSubjComponent,
   ],
-  imports: [OrdersRoutingModule, CommonModule, SharedModule, ReactiveFormsModule, TemplatesModule],
+  imports: [
+    OrdersRoutingModule,
+    CommonModule,
+    SharedModule,
+    ReactiveFormsModule,
+    TemplatesModule,
+  ],
   providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }],
 })
 export class OrdersModule {}

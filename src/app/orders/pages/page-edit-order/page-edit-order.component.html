@@ -12,7 +12,7 @@
         <app-form-order
         [objOrder]='init'
         (submitted)='onEdit($event)'
-        (deleted)='onDelete($event)'
+        (deleted)='onOpenModal($event)'
         ></app-form-order>
        </div>
 
@@ -27,16 +27,13 @@
 </app-template-container>
 
 
+<app-modal *ngIf="isModalOpen">
+  <!-- Contenu de la modal -->
+  <p class='modal-description'>Contenu de la modal affiché grâce à ng-content</p>
+  <!-- Boutons -->
+  <div class="modal-buttons">
+    <button (click)="closeModal()">Fermer</button>
+    <button (click)='onDelete()'>CONFIRMER</button>
+  </div>
+</app-modal>
 
-<!--
-
-  dans app-form  > créer le bouton > (click)='onDelete()'
-  @Output()
-
-  dans page-edit-order
-  dans le service > méthode .delete(url/id)
-  redirection
-
-  ajuster affichage selon page-add ou page-edit
-
- -->

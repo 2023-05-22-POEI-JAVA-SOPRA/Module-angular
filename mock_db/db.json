@@ -2,53 +2,23 @@
   "orders": [
     {
       "tjmHt": 1200,
-      "typePresta": "Application2025",
       "nbJours": 5,
       "tva": 20,
       "state": "OPTION",
-      "client": "Capgemini",
-      "comment": "",
+      "typePresta": "test type",
+      "client": "Client 10",
+      "comment": null,
       "id": 1
     },
     {
-      "tjmHt": 1200,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "typePresta": "formation",
-      "client": "Capgemini",
-      "comment": null,
-      "id": 3
-    },
-    {
-      "tjmHt": 1200,
-      "nbJours": 12,
+      "tjmHt": 1202,
+      "nbJours": 5,
       "tva": 20,
       "state": "OPTION",
-      "typePresta": "formation2023",
-      "client": "Capgemini",
-      "comment": "",
-      "id": 4
-    },
-    {
-      "tjmHt": 1200,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "CANCELLED",
       "typePresta": "Formation",
-      "client": "Client 11",
+      "client": "fdsfdsfds",
       "comment": null,
-      "id": 6
-    },
-    {
-      "tjmHt": 1200,
-      "typePresta": "Formation",
-      "nbJours": 6,
-      "tva": 20,
-      "state": "CANCELLED",
-      "client": "Test",
-      "comment": null,
-      "id": 12
+      "id": 2
     }
   ],
   "clients": [
