@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TemplatesModule } from '../templates/templates.module';
 import { DemoObsSubjectComponent } from './pages/demo-obs-subject/demo-obs-subject.component';
 import { DemoObsBehaviorSubjComponent } from './pages/demo-obs-behavior-subj/demo-obs-behavior-subj.component';
+import { DemoAsObservableComponent } from './pages/demo-as-observable/demo-as-observable.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DemoObsBehaviorSubjComponent } from './pages/demo-obs-behavior-subj/dem
     FormOrderComponent,
     DemoObsSubjectComponent,
     DemoObsBehaviorSubjComponent,
+    DemoAsObservableComponent,
   ],
   imports: [
     OrdersRoutingModule,
