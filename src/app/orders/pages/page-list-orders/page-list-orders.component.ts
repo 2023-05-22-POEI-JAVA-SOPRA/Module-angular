@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../service/orders.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -35,7 +36,11 @@ export class PageListOrdersComponent {
     'Etat',
   ];
 
-  constructor(private ordersService: OrdersService, private router: Router) {
+  constructor(
+    private ordersService: OrdersService,
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {
     const value1 = StateOrder.CANCELLED;
     const index = this.states.indexOf(value1);
     //console.log(index);
@@ -46,10 +51,10 @@ export class PageListOrdersComponent {
     this.ordersService.getData().subscribe({
       next: (data) => {
         //console.log(data);
-        this.tab = data
+        this.tab = data;
       },
       error: (e) => {
-        //console.log(e);
+        console.log(e);
         // ici on peut afficher l'erreur dans la page
       },
     });
@@ -89,5 +94,12 @@ export class PageListOrdersComponent {
     // redirection avec Router
     // attention besoin de modifier la route
     this.router.navigate(['orders', 'edit', obj.id]);
+  }
+
+  onDelete(obj: Order) {
+    this.ordersService.delete(obj.id).subscribe(() => {
+      this.tab = this.tab.filter((item) => item.id !== obj.id);
+      this.cdr.detectChanges();
+    });
   }
 }

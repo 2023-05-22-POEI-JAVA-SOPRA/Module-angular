@@ -1,26 +1,5 @@
 {
-  "orders": [
-    {
-      "tjmHt": 1200,
-      "nbJours": 5,
-      "tva": 20,
-      "state": "OPTION",
-      "typePresta": "test type",
-      "client": "Client 10",
-      "comment": null,
-      "id": 1
-    },
-    {
-      "tjmHt": 1202,
-      "nbJours": 5,
-      "tva": 20,
-      "state": "OPTION",
-      "typePresta": "Formation",
-      "client": "fdsfdsfds",
-      "comment": null,
-      "id": 2
-    }
-  ],
+  "orders": [],
   "clients": [
     {
       "state": "INACTIVE",

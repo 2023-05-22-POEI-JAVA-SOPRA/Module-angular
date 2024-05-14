@@ -1,4 +1,3 @@
-
 <!-- créer un composant form-order, où ???? -->
 <!-- <p>
   <a href='http://localhost:49548/orders'>Test avec href</a>
@@ -11,8 +10,6 @@
 
 <!-- générer un new order et le faire passer à app-form-order -->
 <!-- vérifier dans app-form-order si vous obtenez bien un objet dans ngOnInit -->
-<app-form-order
-[objOrder]='init'
-(submitted)='onAdd($event)'
-></app-form-order>
-
+<app-template-container title='Ajouter une commande'>
+  <app-form-order [objOrder]='init' (submitted)='onAdd($event)'></app-form-order>
+</app-template-container>

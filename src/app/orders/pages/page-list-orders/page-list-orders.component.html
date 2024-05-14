@@ -1,5 +1,44 @@
 <!-- string interpolation -->
-<h1>{{ title }}</h1>
+<app-template-full-width title='Liste des commandes'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor='let header of headers'>
+          {{ header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor='let obj of tab'>
+        <th>
+          <button (click)='goToEdit(obj)'>Editer</button>
+          <button (click)='onDelete(obj)'>Delete</button>
+        </th>
+        <td>{{ obj.typePresta | uppercase }}</td>
+        <td>{{ obj.client}}</td>
+        <td> {{ obj.nbJours}}</td>
+        <td> {{ obj.tjmHt}}</td>
+        <td> {{ obj | total | currency }}</td>
+        <td> {{ obj| total : true | currency }} </td>
+        <!-- <td [ngClass]="{
+        'state-cancelled': obj.state == 'CANCELLED',
+        'state-option': obj.state == 'OPTION',
+        'state-confirmed': obj.state == 'CONFIRMED'
+      }"> {{ obj.state}}</td> -->
+        <!-- works -->
+        <td appState [stateObj]='obj.state'>
+          <select class="form-control" id="state" (change)='changeState(obj, $event)'>
+            <option [selected]='state === obj.state' *ngFor='let state of states' [value]='state'> {{state}} </option>
+          </select>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <app-btn title='Ajouter' routeInfo='/orders/add' styleBtn='btn btn-warning'>
+  </app-btn>
+</app-template-full-width>
 
 
 <!-- afficher un tableau-->
@@ -10,41 +49,7 @@
 </ul> -->
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" *ngFor='let header of headers'>
-        {{ header }}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
 
-    <tr *ngFor='let obj of tab'>
-      <th><button (click)='goToEdit(obj)'>Editer</button></th>
-      <td>{{ obj.typePresta | uppercase }}</td>
-      <td>{{ obj.client}}</td>
-      <td> {{ obj.nbJours}}</td>
-      <td> {{ obj.tjmHt}}</td>
-      <td> {{ obj | total | currency }}</td>
-      <td> {{ obj| total : true | currency }} </td>
-      <!-- <td [ngClass]="{
-        'state-cancelled': obj.state == 'CANCELLED',
-        'state-option': obj.state == 'OPTION',
-        'state-confirmed': obj.state == 'CONFIRMED'
-      }"> {{ obj.state}}</td> -->
-      <!-- works -->
-      <td appState [stateObj]='obj.state'>
-        <select class="form-control" id="state" (change)='changeState(obj, $event)'>
-          <option [selected]='state === obj.state' *ngFor='let state of states' [value]='state'> {{state}} </option>
-        </select>
-      </td>
-    </tr>
-
-  </tbody>
-</table>
-<app-btn title='Ajouter' routeInfo='/orders/add' styleBtn='btn btn-warning'>
-</app-btn>
 
 
 
